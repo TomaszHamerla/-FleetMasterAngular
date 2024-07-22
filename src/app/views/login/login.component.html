@@ -1,1 +1,38 @@
-<p>login works!</p>
+<div class="container">
+  <div class="login-container">
+    <div class="greeting">
+      <h2>Welcome to Fleet Master</h2>
+    </div>
+    <div class="greeting">
+      <h3 class="title">Sign In
+        <i class="pi pi-sign-in"></i></h3>
+    </div>
+    <div class="input-element">
+      <p-floatLabel>
+        <input pInputText id="username" [(ngModel)]="username"/>
+        <label for="username">Username</label>
+      </p-floatLabel>
+      <div class="icon-container">
+        <i class="pi pi-user"></i>
+      </div>
+    </div>
+    <div class="input-element">
+      <p-floatLabel>
+        <input id="password" pPassword
+               [(ngModel)]="password"
+               [showPassword]="passwordVisible"
+        />
+        <label for="password">Password</label>
+      </p-floatLabel>
+      <div class="icon-container" (click)="togglePasswordVisibility()">
+        <i class="pi icon-password" pTooltip="show password"
+           [ngClass]="passwordVisible ? 'pi-eye' : 'pi-eye-slash'"
+        ></i>
+      </div>
+    </div>
+    <div class="button-container">
+      <p-button label="Log in"/>
+      <p-button label="Register" severity="help"/>
+    </div>
+  </div>
+</div>
