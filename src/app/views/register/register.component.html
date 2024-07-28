@@ -1,1 +1,48 @@
-<p>register works!</p>
+<div class="container">
+  <div class="login-container">
+    <div class="greeting">
+      <h2>Welcome to Fleet Master</h2>
+    </div>
+    <div class="greeting greeting-registration">
+      <h3 class="title">Registration
+      </h3>
+      <i class="pi pi-user-plus"></i>
+    </div>
+    <div class="input-element">
+      <p-floatLabel>
+        <input pInputText id="username" [(ngModel)]="username"/>
+        <label for="username">Username</label>
+      </p-floatLabel>
+      <div class="icon-container">
+        <i class="pi pi-user"></i>
+      </div>
+    </div>
+    <div class="input-element">
+      <p-floatLabel>
+        <input pInputText id="email" [(ngModel)]="email"/>
+        <label for="email">Email</label>
+      </p-floatLabel>
+      <div class="icon-container">
+        <i class="pi pi-envelope"></i>
+      </div>
+    </div>
+    <div class="input-element">
+      <p-floatLabel>
+        <input id="password" pPassword
+               [(ngModel)]="password"
+               [showPassword]="passwordVisible"
+        />
+        <label for="password">Password</label>
+      </p-floatLabel>
+      <div class="icon-container" (click)="togglePasswordVisibility()">
+        <i class="pi icon-password" pTooltip="show password"
+           [ngClass]="passwordVisible ? 'pi-eye' : 'pi-eye-slash'"
+        ></i>
+      </div>
+    </div>
+    <div class="button-container">
+      <p-button label="Register"/>
+      <p-button label="Log in" severity="help" (click)="changeToLoginForm()"/>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,16 @@ export class LoginComponent {
   password: any;
   passwordVisible: boolean = false;
 
+  constructor(
+    private router: Router
+  ) {
+  }
+
   togglePasswordVisibility() {
     this.passwordVisible = !this.passwordVisible;
+  }
+
+  changeToRegisterForm() {
+    this.router.navigate(['/register']);
   }
 }

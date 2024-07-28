@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+
+.login-container {
+  background-color: #e9e9f7;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(1, 1, 1, 1);
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+.greeting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.greeting-registration {
+  color: #3B82F6;
+}
+
+.input-element {
+  margin: 30px;
+  display: flex;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+}
+
+.icon-password {
+  cursor: pointer;
+}
+
+::ng-deep .p-password-meter{
+  display: none;
+}
+
+h3{
+  margin-right: 10px
+}
