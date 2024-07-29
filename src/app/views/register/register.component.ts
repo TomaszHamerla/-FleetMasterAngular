@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
+import {ToastService} from "../../service/toast.service";
 
 @Component({
   selector: 'app-register',
@@ -13,7 +14,8 @@ export class RegisterComponent {
   email: any;
 
   constructor(
-    private router: Router
+    private router: Router,
+    private toastService: ToastService
   ) {
   }
 
@@ -23,5 +25,9 @@ export class RegisterComponent {
 
   changeToLoginForm() {
     this.router.navigate(['/login']);
+  }
+
+  register() {
+    this.toastService.show();
   }
 }
