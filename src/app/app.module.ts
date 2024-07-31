@@ -16,28 +16,36 @@ import {ToastModule} from "primeng/toast";
 import {MessageService} from "primeng/api";
 import {ToastService} from "./service/toast.service";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    RegisterComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    CardModule,
-    PasswordModule,
-    Button,
-    FloatLabelModule,
-    PaginatorModule,
-    InputTextModule,
-    DockModule,
-    ToastModule,
-    BrowserAnimationsModule
-  ],
-  providers: [MessageService, ToastService],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        LoginComponent,
+        RegisterComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        CardModule,
+        PasswordModule,
+        Button,
+        FloatLabelModule,
+        PaginatorModule,
+        InputTextModule,
+        DockModule,
+        ToastModule,
+        BrowserAnimationsModule,
+        HttpClientModule
+    ],
+    providers: [
+        MessageService,
+        ToastService,
+
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }
+
+
