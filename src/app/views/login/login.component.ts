@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
 import {ToastService} from "../../service/toast.service";
+import {AuthService} from "../../service/auth.service";
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,8 @@ export class LoginComponent {
 
   constructor(
     private router: Router,
-    private toastService: ToastService
+    private toastService: ToastService,
+    private authService: AuthService
   ) {
   }
 
@@ -27,6 +29,12 @@ export class LoginComponent {
   }
 
   login() {
-    this.toastService.show();
+    this.authService.loginUser(this.username, this.password).subscribe({
+      next: () => {
+        this.toastService.show('Login successful')
+      },
+      error: (err) => {
+      }
+    });
   }
 }

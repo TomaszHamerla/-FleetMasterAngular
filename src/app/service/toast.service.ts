@@ -10,7 +10,11 @@ export class ToastService {
     private messageService: MessageService
   ) { }
 
-  show(){
-    this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Message Content' })
+  show(message: string =''){
+    this.messageService.add({ severity: 'success', summary: 'Success', detail: message, life: 7000  })
+  }
+
+  showError(message: string =''){
+    this.messageService.add({ severity: 'error', summary: 'Error', detail: message, life: 7000 })
   }
 }
