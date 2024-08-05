@@ -39,4 +39,9 @@ export class AuthService {
         })
       );
   }
+
+  registerUser(username: string, password: string, email: string){
+    const user = {username, email, password};
+   return this.httpClient.post<any>(`${environment.API_BASE_URL}/users`, user);
+  }
 }
