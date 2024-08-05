@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import {Router} from "@angular/router";
+import {Route, Router} from "@angular/router";
 import {ToastService} from "../../service/toast.service";
+import {AuthService} from "../../service/auth.service";
 
 @Component({
   selector: 'app-register',
@@ -15,7 +16,8 @@ export class RegisterComponent {
 
   constructor(
     private router: Router,
-    private toastService: ToastService
+    private toastService: ToastService,
+    private authService: AuthService,
   ) {
   }
 
@@ -28,6 +30,14 @@ export class RegisterComponent {
   }
 
   register() {
-    this.toastService.show();
+    this.authService.registerUser(this.username, this.password, this.email).subscribe({
+      next: () => {
+        this.toastService.show('Register successful');
+        this.router.navigate(['/login']);
+      },
+      error: (error) => {
+        this.toastService.showError(error.error.message);
+      }
+    })
   }
 }
